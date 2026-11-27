@@ -1,0 +1,61 @@
+name: video_player_app
+description: "Offline-first and online-subtitle-capable mobile video player powered by media_kit (libmpv + FFmpeg)."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Core Playback Engine (libmpv + FFmpeg + libass)
+  media_kit: ^1.2.6
+  media_kit_video: ^2.0.1
+  media_kit_libs_video: ^1.0.7
+
+  # Local Persistence, Crypto & File Paths
+  sqflite: ^2.4.6
+  path: ^1.9.1
+  path_provider: ^2.1.6
+  crypto: ^3.0.8
+
+  # Storage Scanning, Permissions, File Picking & Sharing
+  permission_handler: ^12.0.1
+  photo_manager: ^3.12.0
+  file_picker: ^13.4.1
+  share_plus: ^13.3.1
+
+  # Online Subtitles, AI Whisper & Web Video Downloader
+  dio: ^5.11.1
+
+  # Background Audio, Casting & Privacy Vault Auth
+  audio_service: ^0.18.19
+  audio_session: ^0.2.4
+  cast: ^2.1.0
+  bonsoir: ^7.1.6
+  local_auth: ^3.0.2
+
+  # Screen Brightness, System Volume & Wake Lock
+  screen_brightness: ^2.1.12
+  volume_controller: ^3.7.1
+  wakelock_plus: ^1.8.2
+
+  # Utilities & Icons
+  intl: ^0.20.3
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  sqflite_common_ffi: ^2.4.7
+
+flutter:
+  uses-material-design: true
+  assets:
+    # Application logo and branding artwork
+    - assets/images/cinevault_logo.png
+    # Bundled fallback font required on Android so libass can render ASS/SSA subtitles
+    - assets/fonts/roboto-regular.ttf
